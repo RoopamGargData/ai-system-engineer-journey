@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from utils import get_joke
 
 app = FastAPI()
 
@@ -6,6 +7,6 @@ app = FastAPI()
 def home():
     return {"message": "AI System Engineer Server Running"}
 
-@app.get("/greet/{name}")
-def greet(name: str):
-    return {"greet": f"Hello {name}, welcome to AI Engineering"}
+@app.get("/joke")
+def joke():
+    return {"joke": get_joke()}
