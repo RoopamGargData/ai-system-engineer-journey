@@ -8,6 +8,9 @@ logging.basicConfig(
     format="%(asctime)s - %(message)s"
 )
 
+def log_message(message):
+    logging.info(message)
+
 def load_config():
     with open("config.json", "r") as f:
         data = json.load(f)
