@@ -27,8 +27,12 @@ def load_config():
        # logging.error(str(e))  #error log file me likho
        # return "No Joke available"  #crash ki jagah safe message do
 
-def save_result(text):
+def save_json_result(text):   #structured save function
+    #dictonanry structure banana 
+    data  ={"text" : text }  #key-value pair store
+    
     with open("output.txt","a") as f:
+        json.dump(data,f)   #json me convert karke write
         f.write(text + "\n")
     
 
